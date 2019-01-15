@@ -1,11 +1,8 @@
 package love.wangqi.http.support;
 
 import love.wangqi.http.annotation.HttpRequest;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -16,12 +13,10 @@ import java.lang.reflect.Proxy;
  * @description:
  * @date: Created in 2019-01-14 14:38
  */
-public class HttpFactoryBean implements FactoryBean<Object>, InitializingBean, ApplicationContextAware {
+public class HttpFactoryBean implements FactoryBean<Object>, InitializingBean {
     private Class<?> type;
 
     private String url;
-
-    private ApplicationContext applicationContext;
 
     @Override
     public Object getObject() throws Exception {
@@ -72,10 +67,5 @@ public class HttpFactoryBean implements FactoryBean<Object>, InitializingBean, A
     @Override
     public void afterPropertiesSet() throws Exception {
 
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
     }
 }
