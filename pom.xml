@@ -12,6 +12,7 @@
         <module>m1</module>
         <module>m2</module>
         <module>m3</module>
+        <module>m4</module>
     </modules>
 
     <name>spring-demo</name>
