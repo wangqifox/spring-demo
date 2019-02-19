@@ -9,20 +9,16 @@ import org.springframework.stereotype.Component;
 /**
  * @author: wangqi
  * @description:
- * @date: Created in 2019-02-18 16:58
+ * @date: Created in 2019-02-19 09:06
  */
 @Component
-public class EventDemoListener implements ApplicationListener<EventDemo> {
-    Logger logger = LoggerFactory.getLogger(EventDemoListener.class);
+public class EventDemoListener2 implements ApplicationListener<EventDemo> {
+    Logger logger = LoggerFactory.getLogger(EventDemoListener2.class);
 
-    public EventDemoListener() {
-        System.out.println("EventDemoListener");
-    }
-
-    @Async
+//    @Async
     @Override
     public void onApplicationEvent(EventDemo event) {
-        logger.info("receiver " + event.getMessage());
+        logger.info("receiver 2 " + event.getMessage());
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
